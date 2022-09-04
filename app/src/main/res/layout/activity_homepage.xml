@@ -1,0 +1,395 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".homepage.HomepageActivity">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding20"
+                android:layout_marginTop="@dimen/padding20"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:textColor="@color/blue_app"
+                android:textSize="@dimen/size28text"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/esplora_destinazioni"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Bentornato, Mario" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/esplora_destinazioni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding20"
+                android:text="@string/esplora_le_nostre_destinazioni"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textColor="@color/blue_app"
+                android:textSize="@dimen/size20text"
+                app:layout_constraintBottom_toTopOf="@id/animation_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toTopOf="@id/esplora_destinazioni"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/esplora_destinazioni"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/wheretogo" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/offerte_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding20"
+                android:layout_marginTop="@dimen/padding30"
+                android:text="Le nostre offerte"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textColor="@color/blue_app"
+                android:textSize="@dimen/size24text"
+                app:layout_constraintBottom_toTopOf="@id/scroll_offerte"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/animation_view" />
+
+            <HorizontalScrollView
+                android:id="@+id/scroll_offerte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding10"
+                android:layout_marginBottom="@dimen/padding10"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/servizi_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/offerte_title">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_offerte"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/padding20">
+
+                    <ImageView
+                        android:id="@+id/londra"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:src="@drawable/london_modified"
+                        app:layout_constraintEnd_toStartOf="@id/amsterdam"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/londra_text"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding5"
+                        android:gravity="center"
+                        android:text="Londra \na partire da 19€"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="@color/blue_app"
+                        app:layout_constraintBottom_toBottomOf="@id/constraint_offerte"
+                        app:layout_constraintStart_toStartOf="@id/londra"
+                        app:layout_constraintTop_toBottomOf="@id/londra" />
+
+                    <ImageView
+                        android:id="@+id/amsterdam"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:src="@drawable/amsterdam_modified"
+                        app:layout_constraintEnd_toStartOf="@id/roma"
+                        app:layout_constraintStart_toEndOf="@id/londra"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/amsterdam_text"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding5"
+                        android:gravity="center"
+                        android:text="Amsterdam \na partire da 14€"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="@color/blue_app"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/amsterdam"
+                        app:layout_constraintTop_toBottomOf="@id/amsterdam" />
+
+                    <ImageView
+                        android:id="@+id/roma"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:src="@drawable/roma_modified"
+                        app:layout_constraintEnd_toStartOf="@id/atene"
+                        app:layout_constraintStart_toEndOf="@id/amsterdam"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding5"
+                        android:gravity="center"
+                        android:text="Roma \na partire da 9€"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="@color/blue_app"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/roma"
+                        app:layout_constraintTop_toBottomOf="@id/roma" />
+
+                    <ImageView
+                        android:id="@+id/atene"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:src="@drawable/atene_modified"
+                        app:layout_constraintEnd_toStartOf="@id/altro"
+                        app:layout_constraintStart_toEndOf="@id/roma"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding5"
+                        android:gravity="center"
+                        android:text="Atene \na partire da 22€"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="@color/blue_app"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/atene"
+                        app:layout_constraintTop_toBottomOf="@id/atene" />
+
+                    <ImageView
+                        android:id="@+id/altro"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:src="@drawable/altro"
+                        app:layout_constraintStart_toEndOf="@id/atene"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding5"
+                        android:gravity="center"
+                        android:text="Altre \nofferte..."
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="@color/blue_app"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/altro"
+                        app:layout_constraintStart_toStartOf="@id/altro"
+                        app:layout_constraintTop_toBottomOf="@id/altro" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </HorizontalScrollView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/servizi_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding20"
+                android:layout_marginTop="@dimen/padding20"
+                android:text="I nostri servizi aggiuntivi"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textColor="@color/blue_app"
+                android:textSize="@dimen/size24text"
+                app:layout_constraintBottom_toTopOf="@id/scroll_offerte"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/scroll_offerte" />
+
+            <HorizontalScrollView
+                android:id="@+id/scroll_servizi_aggiuntivi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding10"
+                android:layout_marginBottom="@dimen/padding20"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/servizi_title">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_servizi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/padding20">
+
+                    <ImageView
+                        android:id="@+id/hotel"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginEnd="@dimen/padding10"
+                        android:src="@drawable/ic_baseline_hotel_24"
+                        app:layout_constraintEnd_toStartOf="@id/shuttle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/hotel_text"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding5"
+                        android:gravity="center"
+                        android:text="Hotel \na partire\n da 39€/notte"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="@color/blue_app"
+                        app:layout_constraintBottom_toBottomOf="@id/constraint_servizi"
+                        app:layout_constraintEnd_toEndOf="@id/hotel"
+                        app:layout_constraintStart_toStartOf="@id/hotel"
+                        app:layout_constraintTop_toBottomOf="@id/hotel" />
+
+                    <ImageView
+                        android:id="@+id/shuttle"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginEnd="@dimen/padding10"
+                        android:src="@drawable/ic_baseline_airport_shuttle_24"
+                        app:layout_constraintEnd_toStartOf="@id/bus"
+                        app:layout_constraintStart_toEndOf="@id/hotel"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/shuttle_text"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding5"
+                        android:gravity="center"
+                        android:text="Navetta \na partire\n da 19€/tratta"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="@color/blue_app"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/shuttle"
+                        app:layout_constraintStart_toStartOf="@id/shuttle"
+                        app:layout_constraintTop_toBottomOf="@id/shuttle" />
+
+                    <ImageView
+                        android:id="@+id/bus"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginEnd="@dimen/padding10"
+                        android:src="@drawable/ic_baseline_directions_bus_24"
+                        app:layout_constraintEnd_toStartOf="@id/treno"
+                        app:layout_constraintStart_toEndOf="@id/shuttle"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/bus_text"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding5"
+                        android:gravity="center"
+                        android:text="Bus \na partire\n da 8,99€"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="@color/blue_app"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/bus"
+                        app:layout_constraintStart_toStartOf="@id/bus"
+                        app:layout_constraintTop_toBottomOf="@id/bus" />
+
+                    <ImageView
+                        android:id="@+id/treno"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginEnd="@dimen/padding10"
+                        android:src="@drawable/ic_baseline_train_24"
+                        app:layout_constraintEnd_toStartOf="@id/taxi"
+                        app:layout_constraintStart_toEndOf="@id/bus"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/treno_text"
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding5"
+                        android:gravity="center"
+                        android:text="Treno \na partire\n da 11,99€"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="@color/blue_app"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/treno"
+                        app:layout_constraintStart_toStartOf="@id/treno"
+                        app:layout_constraintTop_toBottomOf="@id/treno" />
+
+                    <ImageView
+                        android:id="@+id/taxi"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_marginStart="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginEnd="@dimen/padding10"
+                        android:src="@drawable/ic_baseline_local_taxi_24"
+                        app:layout_constraintStart_toEndOf="@id/treno"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding5"
+                        android:gravity="center"
+                        android:text="Servizi\n taxi..."
+                        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                        android:textColor="@color/blue_app"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/taxi"
+                        app:layout_constraintStart_toStartOf="@id/taxi"
+                        app:layout_constraintTop_toBottomOf="@id/taxi" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

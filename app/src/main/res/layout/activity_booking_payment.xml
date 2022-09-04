@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".booking.BookingPaymentActivity">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/voloSelezionatoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding20"
+        android:layout_marginTop="@dimen/padding20"
+        android:text="@string/volo_selezionato"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textSize="@dimen/size28text"
+        app:layout_constraintBottom_toTopOf="@id/choosenFlight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/choosenFlight"
+        layout="@layout/booking_simple_flight_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/padding10"
+        app:layout_constraintTop_toBottomOf="@id/voloSelezionatoTextView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/passengerNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding20"
+        android:text="@string/numero_passeggeri"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choosenFlight" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/totalToPayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding20"
+        android:text="@string/totale_da_pagare"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passengerNumberTextView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/paySumTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding5"
+        android:layout_marginTop="@dimen/padding20"
+        android:text="@string/placeholder_price"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintStart_toEndOf="@id/totalToPayTextView"
+        app:layout_constraintTop_toBottomOf="@id/passengerNumberTextView" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/dati_carta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding20"
+        android:layout_marginTop="@dimen/padding40"
+        android:text="Dati pagamento:"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalToPayTextView" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/cardNumberEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding20"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/padding20"
+        android:background="@drawable/textinputborder"
+        android:hint="@string/numero_carta"
+        android:inputType="numberSigned"
+        android:paddingStart="@dimen/padding20"
+        android:paddingTop="@dimen/padding10"
+        android:paddingEnd="@dimen/padding20"
+        android:paddingBottom="@dimen/padding10"
+        android:text="5555444433331111"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dati_carta" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/expireEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding20"
+        android:layout_marginTop="@dimen/padding20"
+        android:layout_marginEnd="@dimen/padding5"
+        android:background="@drawable/textinputborder"
+        android:hint="@string/scadenza"
+        android:inputType="date"
+        android:paddingStart="@dimen/padding10"
+        android:paddingTop="@dimen/padding10"
+        android:paddingEnd="@dimen/padding5"
+        android:paddingBottom="@dimen/padding10"
+        android:text="03/30"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintEnd_toStartOf="@id/cvvEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardNumberEditText" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/cvvEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding5"
+        android:layout_marginTop="@dimen/padding20"
+        android:layout_marginEnd="@dimen/padding20"
+        android:background="@drawable/textinputborder"
+        android:hint="@string/cvv"
+        android:inputType="numberSigned"
+        android:paddingStart="@dimen/padding10"
+        android:paddingTop="@dimen/padding10"
+        android:paddingEnd="@dimen/padding5"
+        android:paddingBottom="@dimen/padding10"
+        android:text="737"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/expireEditText"
+        app:layout_constraintTop_toBottomOf="@id/cardNumberEditText" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonPay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding40"
+        android:layout_marginTop="@dimen/padding20"
+        android:layout_marginBottom="@dimen/padding80"
+        android:padding="@dimen/padding15"
+        android:text="@string/paga_ora"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvvEditText" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/termini_servizio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:paddingHorizontal="@dimen/padding10"
+        android:text="@string/cliccando_paga_ora_accetto_i_termini_e_condizioni_dell_esercente_del_pagamento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonPay" />
+
+    <View
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_app_transparent"
+        android:visibility="gone" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading_animation"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="@dimen/padding15"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".booking.BookingPaymentConfirmationActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/padding15"
+        app:layout_constraintBottom_toTopOf="@id/bottoneHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/flying_animation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/flying" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/presentationTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding15"
+                android:layout_marginVertical="@dimen/padding10"
+                android:text="@string/prenotazione_confermata"
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                android:textSize="@dimen/size28text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flying_animation" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/subPresentationTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding15"
+                android:layout_marginVertical="@dimen/padding5"
+                android:text="@string/volo_porte_placeholder"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textSize="@dimen/size20text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/presentationTextView" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/prenotation_code_phrase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding50"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:text="Codice prenotazione:"
+                android:textSize="@dimen/size20text"
+                app:layout_constraintStart_toStartOf="@id/presentationTextView"
+                app:layout_constraintTop_toBottomOf="@id/subPresentationTextView" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/prenotationCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/padding50"
+                android:layout_marginStart="@dimen/padding5"
+                android:textColor="@color/blue_app"
+                android:textSize="@dimen/size24text"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/presentationTextView"
+                app:layout_constraintTop_toBottomOf="@id/subPresentationTextView"
+                tools:text="ABCDEF12" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/voloAcquistatoPhrase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/padding20"
+                android:text="@string/volo_acquistato"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textSize="@dimen/size20text"
+                app:layout_constraintStart_toStartOf="@id/prenotation_code_phrase"
+                app:layout_constraintTop_toBottomOf="@id/prenotation_code_phrase" />
+
+            <include
+                android:id="@+id/buyedFlight"
+                layout="@layout/booking_simple_flight_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/padding40"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/voloAcquistatoPhrase" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/totalPaidPhrase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/padding20"
+                android:text="@string/totale_pagato"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textSize="@dimen/size24text"
+                app:layout_constraintStart_toStartOf="@id/voloAcquistatoPhrase"
+                app:layout_constraintTop_toBottomOf="@id/buyedFlight" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/totalPaid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding20"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                android:textSize="@dimen/size24text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buyedFlight"
+                tools:text="@string/placeholder_price" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bottoneHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding40"
+        android:padding="@dimen/padding15"
+        android:text="@string/torna_alla_home"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

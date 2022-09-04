@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registration.RegistrationSuccessActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_marginTop="@dimen/padding15"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/success" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/presentationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding25"
+        android:layout_marginHorizontal="@dimen/padding15"
+        android:text="@string/registration_text"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textStyle="bold"
+        android:textSize="@dimen/size24text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/animation_view" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/subPresentationTextView"
+        android:layout_width="wrap_content"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding15"
+        android:padding="@dimen/padding10"
+        android:gravity="center"
+        android:text="@string/subRegistration_text"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/presentationTextView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bottoneHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding15"
+        android:layout_margin="@dimen/padding40"
+        android:text="@string/gotohomepage"
+        android:textSize="@dimen/size20text"
+        android:background="@color/blue_app"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

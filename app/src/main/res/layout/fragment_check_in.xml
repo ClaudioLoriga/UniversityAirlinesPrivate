@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_text_prenotazione"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding20"
+        android:layout_marginTop="@dimen/padding30"
+        android:layout_marginEnd="@dimen/padding20"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:background="@drawable/textinputborder"
+        android:hint="@string/codice_prenotazione"
+        android:inputType="text"
+        android:paddingStart="@dimen/padding20"
+        android:paddingTop="@dimen/padding10"
+        android:paddingEnd="@dimen/padding20"
+        android:paddingBottom="@dimen/padding10"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_text_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding20"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/padding20"
+        android:background="@drawable/textinputborder"
+        android:hint="@string/hint_email"
+        android:inputType="text"
+        android:paddingStart="@dimen/padding20"
+        android:paddingTop="@dimen/padding10"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:paddingEnd="@dimen/padding20"
+        android:paddingBottom="@dimen/padding10"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_text_prenotazione" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/check_in_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/padding40"
+        android:layout_marginBottom="@dimen/padding20"
+        android:padding="@dimen/padding15"
+        android:text="@string/check_in"
+        android:textColor="@color/white"
+        android:enabled="false"
+        android:textSize="@dimen/size20text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
