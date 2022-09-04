@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UniversityAirlines">
         <activity
+            android:name=".check_in.boarding.BoardingActivity"
+            android:exported="false"
+            android:parentActivityName=".homepage.HomepageActivity"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".check_in.CheckInConfirmedActivity"
             android:exported="false"
             android:theme="@style/Theme.UniversityAirlines.NoActionBar.Fullscreen"

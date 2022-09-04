@@ -4,9 +4,14 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat.startActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.universityairlines.R
+import com.example.universityairlines.booking.adapter.BookingFlightListAdapter
+import com.example.universityairlines.check_in.boarding.adapter.BoardingCardsAdapter
 import com.example.universityairlines.databinding.ActivityCheckInConfirmedBinding
 import com.example.universityairlines.databinding.BoardingCardBinding
+import com.example.universityairlines.databinding.BoardingCardListBinding
 import com.example.universityairlines.homepage.HomepageActivity
 import com.example.universityairlines.model.Reservation
 import com.example.universityairlines.ui.getString
@@ -16,14 +21,16 @@ import kotlin.random.Random
 
 class BoardingActivity : AppCompatActivity() {
 
-    private lateinit var binding: BoardingCardBinding
-    private val allowedChars = ('A'..'F')
+    private lateinit var binding: BoardingCardListBinding
+    private lateinit var adapter: BoardingCardsAdapter
+    private val layoutManager by lazy { LinearLayoutManager(this@BoardingActivity) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = BoardingCardBinding.inflate(layoutInflater)
+        binding = BoardingCardListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-/*
+        title = "Carte d'imbarco"
+
         val codeForCheckin = intent.getStringExtra("code").toString()
 
         val sharedPref =
@@ -41,58 +48,20 @@ class BoardingActivity : AppCompatActivity() {
                 reservationListString,
                 object : TypeReference<MutableList<Reservation>>() {})
 
+            binding.recyclerView.layoutManager = layoutManager
             reservationList.forEach { reservation ->
-                if (reservation.code.uppercase() == codeForCheckin.uppercase()) {
-
-                    with(binding.buyedFlight) {
-                        andataTextView.text = binding.buyedFlight.getString(
-                            com.example.universityairlines.R.string.booking_details_flight,
-                            "Origine",
-                            reservation.origin
-                        )
-                        ritornoTextView.text = binding.buyedFlight.getString(
-                            com.example.universityairlines.R.string.booking_details_flight,
-                            "Destinazione",
-                            reservation.destination
-                        )
-                        dataTextView.text =
-                            binding.buyedFlight.getString(
-                                com.example.universityairlines.R.string.booking_details_flight,
-                                "Data",
-                                reservation.date
-                            )
-                        oraTextView.text =
-                            binding.buyedFlight.getString(
-                                com.example.universityairlines.R.string.booking_details_flight,
-                                "Ora",
-                                reservation.hour
-                            )
-
-                    }
-
-                    binding.prenotationCode.text = codeForCheckin.uppercase()
-
-                    if (!reservation.checkin) {
-                        reservation.checkin = true
-                        reservationList.remove(reservation)
-                        reservationList.add(reservation)
-
-                        with(sharedPref.edit()) {
-                            putString(
-                                getString(R.string.reservation_list_shared_preferences),
-                                mapper.writeValueAsString(reservationList)
-                            )
-                            apply()
-                        }
-                    }
+                if (reservation.code.uppercase() == codeForCheckin.uppercase() && reservation.checkin) {
+                    // Ho la reservation corretta, devo popolare tante boarding pass quanti sono i passeggeri
+                    adapter = BoardingCardsAdapter(reservation)
+                    binding.recyclerView.adapter = adapter
+                    adapter.submitList(reservation.passengerDetails)
                 }
             }
         }
 
-        binding.postoAssegnato.text = Random.nextInt(0,22).toString().plus(allowedChars.random())
-        binding.bottoneHome.setOnClickListener {
+        binding.buttonConferma.setOnClickListener {
             val intent = Intent(this, HomepageActivity::class.java)
             startActivity(intent)
-        }*/
+        }
     }
 }

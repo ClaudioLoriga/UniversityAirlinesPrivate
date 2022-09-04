@@ -100,16 +100,15 @@
                 android:textSize="@dimen/size20text"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/posto_assegnato_card"
                 app:layout_constraintTop_toTopOf="@id/posto_assegnato_card"
                 tools:text="ABCDEF12" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/andataTextView"
+                android:id="@+id/origineTextView"
                 android:layout_marginTop="@dimen/padding20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/posto_assegnato_card"
                 tools:text="Cagliari, CAG" />
@@ -121,36 +120,36 @@
                 android:src="@drawable/ic_vector"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/andataTextView"
+                app:layout_constraintTop_toTopOf="@id/origineTextView"
                 app:tint="@color/blue_app" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/ritornoTextView"
+                android:id="@+id/destinazioneTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/andataTextView"
+                app:layout_constraintTop_toTopOf="@id/origineTextView"
                 tools:text="Cagliari, CAG" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/dataTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:layout_marginTop="@dimen/padding20"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/andataTextView"
+                app:layout_constraintTop_toBottomOf="@id/origineTextView"
                 tools:text="@string/booking_details_flight" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/oraTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:layout_marginTop="@dimen/padding20"
                 android:gravity="end"
-                app:layout_constraintTop_toBottomOf="@id/ritornoTextView"
+                app:layout_constraintTop_toBottomOf="@id/origineTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="@string/booking_details_flight" />
 

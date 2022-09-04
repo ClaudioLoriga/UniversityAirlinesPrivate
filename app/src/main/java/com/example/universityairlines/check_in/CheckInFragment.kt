@@ -33,14 +33,18 @@ class CheckInFragment : Fragment() {
             startActivity(intent)
         }
 
-        /*binding.boardingCardsButton.setOnClickListener {
+        binding.boardingCardsButton.setOnClickListener {
             val intent = Intent(context, BoardingActivity::class.java)
             intent.putExtra("code", binding.editTextPrenotazione.text.toString())
             startActivity(intent)
-        }*/
+        }
 
         with(binding) {
-            setupValidation(checkInButton, editTextPrenotazione)
+            setupValidation(checkInButton, editTextPrenotazione, editTextEmail)
+        }
+
+        with(binding) {
+            setupValidation(boardingCardsButton, editTextPrenotazione, editTextEmail)
         }
     }
 

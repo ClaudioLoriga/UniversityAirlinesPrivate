@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
-import androidx.core.view.children
 import androidx.core.widget.doOnTextChanged
 import com.example.universityairlines.R
 import com.example.universityairlines.databinding.PassengerDetailItemBinding

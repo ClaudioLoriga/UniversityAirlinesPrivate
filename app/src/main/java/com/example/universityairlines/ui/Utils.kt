@@ -4,11 +4,10 @@ import android.icu.text.SimpleDateFormat
 import androidx.annotation.StringRes
 import com.example.universityairlines.booking.BookingPaymentConfirmationActivity
 import com.example.universityairlines.check_in.CheckInActivity
-import com.example.universityairlines.databinding.ActivityBookingPaymentBinding
-import com.example.universityairlines.databinding.ActivityBookingPaymentConfirmationBinding
-import com.example.universityairlines.databinding.ActivityCheckInBinding
-import com.example.universityairlines.databinding.BookingSimpleFlightViewBinding
+import com.example.universityairlines.check_in.boarding.adapter.BoardingCardsAdapter
+import com.example.universityairlines.databinding.*
 import java.util.*
+import kotlin.random.Random
 
 fun Long.toPrettyDate(): String? {
     val date = Date(this)
@@ -40,8 +39,15 @@ fun ActivityCheckInBinding.getString(
 ) =
     root.context.resources.getString(id, *params)
 
-fun addBackArrowToActivity () {
+fun BoardingCardBinding.getString(
+    @StringRes id: Int,
+    vararg params: String
+) =
+    root.context.resources.getString(id, *params)
 
+fun randomAlphanumeric (): String {
+    val allowedChars = ('A'..'F')
+    return Random.nextInt(0, 22).toString().plus(allowedChars.random())
 }
 
 

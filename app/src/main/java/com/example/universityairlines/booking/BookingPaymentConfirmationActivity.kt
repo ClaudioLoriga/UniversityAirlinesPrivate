@@ -4,21 +4,15 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.ContextCompat.startActivity
-import androidx.lifecycle.lifecycleScope
 import com.example.universityairlines.R
-import com.example.universityairlines.repository.UserRepository
 import com.example.universityairlines.databinding.ActivityBookingPaymentConfirmationBinding
 import com.example.universityairlines.homepage.HomepageActivity
-import com.example.universityairlines.model.ApiResult
 import com.example.universityairlines.model.Flight
+import com.example.universityairlines.model.Passenger
 import com.example.universityairlines.model.Reservation
 import com.example.universityairlines.ui.getString
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import kotlinx.coroutines.launch
-import java.util.*
 
 class BookingPaymentConfirmationActivity : AppCompatActivity() {
 
@@ -36,6 +30,7 @@ class BookingPaymentConfirmationActivity : AppCompatActivity() {
         val flight = intent.extras?.getParcelable<Flight>("flight")
         val pnr = intent.getStringExtra(EXTRAKEY_PNR).orEmpty()
         val totalToPay = intent.getStringExtra(EXTRAKEY_TTP).orEmpty()
+        val passengersDetails = intent.extras?.getParcelableArrayList<Passenger>("passengers")
 
         if (flight != null) {
             val (data, ora) = flight.departureDate.split(" ")
@@ -56,8 +51,6 @@ class BookingPaymentConfirmationActivity : AppCompatActivity() {
                     binding.getString(R.string.booking_details_flight, "Data", data)
                 oraTextView.text =
                     binding.getString(R.string.booking_details_flight, "Ora", ora)
-
-
                 binding.totalPaid.text = binding.getString(
                     R.string.placeholder_price,
                     "",
@@ -83,7 +76,9 @@ class BookingPaymentConfirmationActivity : AppCompatActivity() {
             date,
             hour,
             false,
-            totalToPay
+            totalToPay,
+            passengersDetails?.size ?: 0,
+            passengersDetails
         )
 
         val sharedPref =
@@ -112,12 +107,9 @@ class BookingPaymentConfirmationActivity : AppCompatActivity() {
                 )
                 apply()
             }
-
         } else {
-
-            var reservationList: MutableList<Reservation> = mutableListOf<Reservation>()
+            val reservationList: MutableList<Reservation> = mutableListOf()
             reservationList.add(reservation)
-
 
             with(sharedPref.edit()) {
                 putString(
@@ -126,8 +118,6 @@ class BookingPaymentConfirmationActivity : AppCompatActivity() {
                 )
                 apply()
             }
-
-
         }
     }
 

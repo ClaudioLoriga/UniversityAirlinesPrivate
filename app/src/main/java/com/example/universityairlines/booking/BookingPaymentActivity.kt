@@ -1,6 +1,5 @@
 package com.example.universityairlines.booking
 
-import android.app.Activity
 import android.content.Intent
 import android.graphics.Typeface
 import android.net.Uri
@@ -14,8 +13,6 @@ import android.text.style.ClickableSpan
 import android.text.style.UnderlineSpan
 import android.view.View
 import android.widget.TextView
-import androidx.activity.result.ActivityResultCallback
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.example.universityairlines.R
@@ -25,7 +22,6 @@ import com.example.universityairlines.model.ApiResult
 import com.example.universityairlines.model.Flight
 import com.example.universityairlines.model.Passenger
 import com.example.universityairlines.ui.getString
-import com.example.universityairlines.validation.setupValidation
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 
@@ -39,7 +35,7 @@ class BookingPaymentActivity : AppCompatActivity() {
         setContentView(binding.root)
         title = "Pagamento"
 
-        val passengerDetails = intent.extras?.getParcelableArrayList<Passenger>("passengers")
+        val passengersDetails = intent.extras?.getParcelableArrayList<Passenger>("passengers")
         val flight = intent.extras?.getParcelable<Flight>("flightInfo")
 
         if (flight != null) {
@@ -59,12 +55,12 @@ class BookingPaymentActivity : AppCompatActivity() {
                 oraTextView.text = binding.getString(R.string.booking_details_flight, "Ora", ora)
             }
 
-            if (passengerDetails != null) {
+            if (passengersDetails != null) {
                 with(binding) {
                     passengerNumberTextView.text =
                         binding.getString(
                             R.string.numero_passeggeri,
-                            passengerDetails.size.toString()
+                            passengersDetails.size.toString()
                         )
                 }
 
@@ -76,7 +72,7 @@ class BookingPaymentActivity : AppCompatActivity() {
                         flight.destination,
                         flight.departureDate,
                         flight.returnDate,
-                        passengerDetails.size.toString(),
+                        passengersDetails.size.toString(),
                         flight.price.toString()
                     )
 
@@ -140,6 +136,7 @@ class BookingPaymentActivity : AppCompatActivity() {
                                     BookingPaymentConfirmationActivity.EXTRAKEY_CVV,
                                     binding.cvvEditText.text.toString()
                                 )
+                                intent.putExtra("passengers", passengersDetails)
                                 startActivity(intent)
                             }
 

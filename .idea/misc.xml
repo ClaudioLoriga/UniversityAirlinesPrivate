@@ -38,7 +38,27 @@
         <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlines/app/src/main/res/layout/recyclerview_item.xml" value="0.33" />
         <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlines/app/src/main/res/layout/splash_layout.xml" value="0.33" />
         <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlines/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.5137404580152671" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/activity_airport_list.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/activity_booking_payment.xml" value="0.22" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/activity_booking_payment_confirmation.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/activity_check_in.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/activity_check_in_confirmed.xml" value="0.52578125" />
         <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/activity_homepage.xml" value="0.5" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/activity_registration.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/activity_registration_success.xml" value="0.33" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/boarding_card.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/boarding_card_list.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/booking_flights_list.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/booking_form_layout.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/booking_simple_flight_view.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/fragment_check_in.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/fragment_container_homepage.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/login_layout.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/new_login.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/new_registration.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/passenger_detail_item.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/passengers_details_list.xml" value="0.52578125" />
+        <entry key="..\:/ANDROIDSTUDIOPROGETTI/UniversityAirlinesPrivate/app/src/main/res/layout/recyclerview_item.xml" value="0.52578125" />
       </map>
     </option>
   </component>

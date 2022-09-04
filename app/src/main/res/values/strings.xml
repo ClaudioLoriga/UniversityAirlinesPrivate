@@ -2,6 +2,8 @@
     <string name="app_name">University Airlines</string>
     <string name="registration_text">Registrazione avvenuta con successo!</string>
     <string name="subRegistration_text">Congratulazioni per esserti unito a University Airlines!</string>
+    <string name="origine">Origine:\n</string>
+    <string name="destinazione">Destinazione:\n</string>
     <string name="hint_origine">Origine</string>
     <string name="hint_destinazione">Destinazione</string>
     <string name="hint_andata">Andata</string>
@@ -26,6 +28,7 @@
     <string name="cagliariExampleText">Cagliari, CAG</string>
     <string name="booking_details_flight">%1$s\n%2$s</string>
     <string name="airport_description">%1$s, %2$s</string>
+    <string name="airport_description_wo_iata">%1$s</string>
     <string name="conferma">Conferma</string>
     <string name="nome">Nome</string>
     <string name="cognome">Cognome</string>
@@ -71,4 +74,5 @@
     <string name="check_in_string">Check-in</string>
     <string name="codice_prenotazione">Codice prenotazione</string>
     <string name="carte_d_imbarco">Carte d\'imbarco</string>
+    <string name="indietro">Indietro</string>
 </resources>

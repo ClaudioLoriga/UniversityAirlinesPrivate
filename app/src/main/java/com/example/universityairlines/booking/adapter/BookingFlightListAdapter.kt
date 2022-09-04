@@ -3,7 +3,6 @@ package com.example.universityairlines.booking.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.StringRes
 import androidx.recyclerview.widget.DiffUtil as BaseDiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +11,6 @@ import com.example.universityairlines.databinding.BookingSimpleFlightViewBinding
 import com.example.universityairlines.model.Flight
 import com.example.universityairlines.model.FlightsResponse
 import com.example.universityairlines.ui.getString
-import kotlinx.coroutines.flow.callbackFlow
 
 
 class BookingFlightListAdapter(private val callBack: (FlightsResponse, Flight) -> Unit, private val flightList : FlightsResponse) :
@@ -37,6 +35,7 @@ class BookingFlightListAdapter(private val callBack: (FlightsResponse, Flight) -
         private val binding = BookingSimpleFlightViewBinding.bind(itemView)
 
 
+
         fun bind(entry: Flight) {
             /**
              * Bind your content to the view here
@@ -58,20 +57,12 @@ class BookingFlightListAdapter(private val callBack: (FlightsResponse, Flight) -
                 ritornoTextView.text = stringRitorno
                 dataTextView.text = stringData
                 oraTextView.text = stringOra
-
                 card.setOnClickListener {
                     callBack(flightList, entry)
                 }
             }
-
         }
     }
-
-//    private fun BookingSimpleFlightViewBinding.getString(
-//        @StringRes id: Int,
-  //      vararg params: String
-  //  ) =
-   //     root.context.resources.getString(id, *params)
 
     class DiffUtil : BaseDiffUtil.ItemCallback<Flight>() {
         override fun areItemsTheSame(oldItem: Flight, newItem: Flight): Boolean {

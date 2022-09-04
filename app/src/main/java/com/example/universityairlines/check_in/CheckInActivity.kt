@@ -9,6 +9,7 @@ import com.example.universityairlines.R
 import com.example.universityairlines.databinding.ActivityCheckInBinding
 import com.example.universityairlines.homepage.HomepageActivity
 import com.example.universityairlines.model.Flight
+import com.example.universityairlines.model.Passenger
 import com.example.universityairlines.model.Reservation
 import com.example.universityairlines.ui.getString
 import com.fasterxml.jackson.core.type.TypeReference
@@ -26,7 +27,7 @@ class CheckInActivity : AppCompatActivity() {
         title = "Check-in"
 
         val selectedCode = intent.getStringExtra("code").toString()
-        var selectedReservation = Reservation("", "", "", "", "", false, "")
+        var selectedReservation = Reservation("", "", "", "", "", false, "", 0, ArrayList())
         val sharedPref = getSharedPreferences(getString(R.string.shared_preferences), Context.MODE_PRIVATE) ?: return
         val defaultValue = ""
         val reservationListString = sharedPref.getString(
@@ -88,7 +89,7 @@ class CheckInActivity : AppCompatActivity() {
                 .setTitle("VOLO NON TROVATO")
                 .setPositiveButton(
                     "Ok"
-                ) { dialog, which -> dialog?.dismiss() }
+                ) { dialog, _ -> dialog?.dismiss() }
                 .setMessage(
                     "Non sono presenti voli"
                 ).show()
@@ -105,7 +106,7 @@ class CheckInActivity : AppCompatActivity() {
                     .setTitle("CHECK-IN GIÀ EFFETTUATO")
                     .setPositiveButton(
                         "Ok"
-                    ) { dialog, which -> dialog?.dismiss() }
+                    ) { dialog, _ -> dialog?.dismiss() }
                     .setMessage(
                         "Il check-in per questo volo risulta già effettuato"
                     ).show()

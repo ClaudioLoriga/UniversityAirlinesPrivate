@@ -9,6 +9,7 @@ import com.example.universityairlines.databinding.ActivityCheckInConfirmedBindin
 import com.example.universityairlines.homepage.HomepageActivity
 import com.example.universityairlines.model.Reservation
 import com.example.universityairlines.ui.getString
+import com.example.universityairlines.ui.randomAlphanumeric
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import kotlin.random.Random
@@ -16,7 +17,6 @@ import kotlin.random.Random
 class CheckInConfirmedActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCheckInConfirmedBinding
-    private val allowedChars = ('A'..'F')
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,7 +90,7 @@ class CheckInConfirmedActivity : AppCompatActivity() {
             }
         }
 
-        binding.postoAssegnato.text = Random.nextInt(0,22).toString().plus(allowedChars.random())
+        binding.postoAssegnato.text = randomAlphanumeric()
         binding.bottoneHome.setOnClickListener {
             val intent = Intent(this, HomepageActivity::class.java)
             startActivity(intent)
