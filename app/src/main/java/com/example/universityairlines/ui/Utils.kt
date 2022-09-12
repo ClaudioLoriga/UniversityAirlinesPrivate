@@ -47,7 +47,7 @@ fun BoardingCardBinding.getString(
 
 fun randomAlphanumeric (): String {
     val allowedChars = ('A'..'F')
-    return Random.nextInt(0, 22).toString().plus(allowedChars.random())
+    return Random.nextInt(1, 22).toString().plus(allowedChars.random())
 }
 
 

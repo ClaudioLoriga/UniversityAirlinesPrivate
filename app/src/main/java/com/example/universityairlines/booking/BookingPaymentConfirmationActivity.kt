@@ -11,6 +11,7 @@ import com.example.universityairlines.model.Flight
 import com.example.universityairlines.model.Passenger
 import com.example.universityairlines.model.Reservation
 import com.example.universityairlines.ui.getString
+import com.example.universityairlines.ui.randomAlphanumeric
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 
@@ -69,6 +70,7 @@ class BookingPaymentConfirmationActivity : AppCompatActivity() {
         val departureDateSplitted = flight?.departureDate?.split(" ")
         val date = departureDateSplitted?.get(0) ?: ""
         val hour = departureDateSplitted?.get(1) ?: ""
+        val randomSeat = randomAlphanumeric()
         val reservation = Reservation(
             pnr,
             flight?.origin ?: "",
@@ -78,7 +80,8 @@ class BookingPaymentConfirmationActivity : AppCompatActivity() {
             false,
             totalToPay,
             passengersDetails?.size ?: 0,
-            passengersDetails
+            passengersDetails,
+            randomSeat
         )
 
         val sharedPref =

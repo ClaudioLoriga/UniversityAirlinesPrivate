@@ -40,22 +40,11 @@ class BoardingCardsAdapter(private val reservation: Reservation) :
              * for example:
              * textview.text = entry.nome
              */
-            /*val stringAndata =
-                binding.getString(R.string.airport_description, binding.getString(R.string.origine), reservation.origin)
-            val stringRitorno = binding.getString(
-                R.string.airport_description,
-                binding.getString(R.string.destinazione),
-                reservation.destination
-            )*/
             val stringData = binding.getString(R.string.booking_details_flight, "Data", reservation.date)
             val stringOra = binding.getString(R.string.booking_details_flight, "Ora", reservation.hour)
             binding.prenotationReference.text = reservation.code
             binding.passengerNameSurname.text = entry.nome.plus(" ").plus(entry.cognome)
-            binding.postoAssegnato.text = randomAlphanumeric()
-            /* binding.origineTextView.text = stringAndata
-             binding.destinazioneTextView.text = stringRitorno
-             binding.dataTextView.text = stringData
-             binding.oraTextView.text = stringOra*/
+            binding.postoAssegnato.text = reservation.postoAssegnato
              binding.origineTextView.text = reservation.origin
              binding.destinazioneTextView.text = reservation.destination
              binding.dataTextView.text = stringData

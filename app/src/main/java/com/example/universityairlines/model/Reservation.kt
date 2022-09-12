@@ -14,5 +14,6 @@ data class Reservation(
    var checkin: Boolean,
    var totalPrice: String,
    var passengerNumber: Int,
-   var passengerDetails: ArrayList<Passenger>?
+   var passengerDetails: ArrayList<Passenger>?,
+   var postoAssegnato: String?
 ): Parcelable

@@ -44,7 +44,6 @@ class CheckInConfirmedActivity : AppCompatActivity() {
 
             reservationList.forEach { reservation ->
                 if (reservation.code.uppercase() == codeForCheckin.uppercase()) {
-
                     with(binding.buyedFlight) {
                         andataTextView.text = binding.buyedFlight.getString(
                             com.example.universityairlines.R.string.booking_details_flight,
@@ -68,10 +67,10 @@ class CheckInConfirmedActivity : AppCompatActivity() {
                                 "Ora",
                                 reservation.hour
                             )
-
                     }
 
                     binding.prenotationCode.text = codeForCheckin.uppercase()
+                    binding.postoAssegnato.text = reservation.postoAssegnato
 
                     if (!reservation.checkin) {
                         reservation.checkin = true
@@ -90,7 +89,7 @@ class CheckInConfirmedActivity : AppCompatActivity() {
             }
         }
 
-        binding.postoAssegnato.text = randomAlphanumeric()
+
         binding.bottoneHome.setOnClickListener {
             val intent = Intent(this, HomepageActivity::class.java)
             startActivity(intent)
