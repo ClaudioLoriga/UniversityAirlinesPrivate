@@ -29,7 +29,6 @@
         android:layout_marginEnd="@dimen/padding20"
         android:background="@drawable/textinputborder"
         android:hint="@string/nome"
-        android:inputType="text"
         android:paddingStart="@dimen/padding20"
         android:paddingTop="@dimen/padding10"
         android:paddingEnd="@dimen/padding20"
@@ -38,7 +37,10 @@
         android:textSize="@dimen/size20text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passeggeroText" />
+        app:layout_constraintTop_toBottomOf="@id/passeggeroText"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:inputType="text"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editTextCognome"
@@ -49,7 +51,6 @@
         android:layout_marginEnd="@dimen/padding20"
         android:background="@drawable/textinputborder"
         android:hint="@string/cognome"
-        android:inputType="text"
         android:paddingStart="@dimen/padding20"
         android:paddingTop="@dimen/padding10"
         android:paddingEnd="@dimen/padding20"
@@ -58,7 +59,10 @@
         android:textSize="@dimen/size20text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextNome" />
+        app:layout_constraintTop_toBottomOf="@id/editTextNome"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:inputType="text"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editTextDocumento"
@@ -69,7 +73,6 @@
         android:layout_marginEnd="@dimen/padding20"
         android:background="@drawable/textinputborder"
         android:hint="@string/numero_documento"
-        android:inputType="text"
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:paddingStart="@dimen/padding20"
         android:paddingTop="@dimen/padding10"
@@ -78,7 +81,10 @@
         android:textSize="@dimen/size20text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextCognome" />
+        app:layout_constraintTop_toBottomOf="@id/editTextCognome"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:inputType="text"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editTextIndirizzo"
@@ -89,7 +95,6 @@
         android:layout_marginEnd="@dimen/padding20"
         android:background="@drawable/textinputborder"
         android:hint="@string/indirizzo"
-        android:inputType="textPostalAddress"
         android:paddingStart="@dimen/padding20"
         android:paddingTop="@dimen/padding10"
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
@@ -98,7 +103,10 @@
         android:textSize="@dimen/size20text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextDocumento" />
+        app:layout_constraintTop_toBottomOf="@id/editTextDocumento"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:inputType="textPostalAddress"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editTextTelefono"
@@ -109,7 +117,6 @@
         android:layout_marginEnd="@dimen/padding20"
         android:background="@drawable/textinputborder"
         android:hint="@string/recapito_telefonico"
-        android:inputType="phone"
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:paddingStart="@dimen/padding20"
         android:paddingTop="@dimen/padding10"
@@ -118,6 +125,7 @@
         android:textSize="@dimen/size20text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextIndirizzo" />
+        app:layout_constraintTop_toBottomOf="@id/editTextIndirizzo"
+        android:inputType="phone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

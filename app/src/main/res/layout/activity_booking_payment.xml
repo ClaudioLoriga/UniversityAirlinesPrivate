@@ -83,16 +83,18 @@
         android:layout_marginEnd="@dimen/padding20"
         android:background="@drawable/textinputborder"
         android:hint="@string/numero_carta"
-        android:inputType="numberSigned"
         android:paddingStart="@dimen/padding20"
         android:paddingTop="@dimen/padding10"
         android:paddingEnd="@dimen/padding20"
         android:paddingBottom="@dimen/padding10"
-        android:text="5555444433331111"
         android:textSize="@dimen/size20text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dati_carta" />
+        app:layout_constraintTop_toBottomOf="@id/dati_carta"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:nextFocusDown="@id/expireEditText"
+        android:inputType="numberSigned"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/expireEditText"
@@ -103,16 +105,18 @@
         android:layout_marginEnd="@dimen/padding5"
         android:background="@drawable/textinputborder"
         android:hint="@string/scadenza"
-        android:inputType="date"
         android:paddingStart="@dimen/padding10"
         android:paddingTop="@dimen/padding10"
         android:paddingEnd="@dimen/padding5"
         android:paddingBottom="@dimen/padding10"
-        android:text="03/30"
         android:textSize="@dimen/size20text"
         app:layout_constraintEnd_toStartOf="@id/cvvEditText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardNumberEditText" />
+        app:layout_constraintTop_toBottomOf="@id/cardNumberEditText"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:nextFocusDown="@id/cvvEditText"
+        android:inputType="date"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/cvvEditText"
@@ -123,16 +127,15 @@
         android:layout_marginEnd="@dimen/padding20"
         android:background="@drawable/textinputborder"
         android:hint="@string/cvv"
-        android:inputType="numberSigned"
         android:paddingStart="@dimen/padding10"
         android:paddingTop="@dimen/padding10"
         android:paddingEnd="@dimen/padding5"
         android:paddingBottom="@dimen/padding10"
-        android:text="737"
         android:textSize="@dimen/size20text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/expireEditText"
-        app:layout_constraintTop_toBottomOf="@id/cardNumberEditText" />
+        app:layout_constraintTop_toBottomOf="@id/cardNumberEditText"
+        android:inputType="numberSigned"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonPay"

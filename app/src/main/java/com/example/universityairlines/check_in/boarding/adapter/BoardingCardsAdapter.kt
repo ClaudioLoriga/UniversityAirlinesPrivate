@@ -13,7 +13,6 @@ import com.example.universityairlines.model.Reservation
 import com.example.universityairlines.ui.getString
 import com.example.universityairlines.ui.randomAlphanumeric
 
-
 class BoardingCardsAdapter(private val reservation: Reservation) :
     ListAdapter<Passenger, BoardingCardsAdapter.ViewHolder>(DiffUtil()) {
 

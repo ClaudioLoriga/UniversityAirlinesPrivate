@@ -1,12 +1,14 @@
 package com.example.universityairlines.booking
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -25,18 +27,18 @@ import java.util.*
 class BookingFragment : Fragment() {
 
     private lateinit var binding: BookingFormLayoutBinding
-    private var resultLauncherOrigine =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if ((result.resultCode == Activity.RESULT_OK) && result != null) {
-                // There are no request codes
-                val data: Intent? = result.data
-                binding.edittextorigine.setText(data?.getStringExtra(BookingAirportList.EXTRAKEY_AIRPORT))
+    private lateinit var resultLauncherOrigine: ActivityResultLauncher<Intent>
 
-            }
-        }
+    private lateinit var resultLauncherDestinazione: ActivityResultLauncher<Intent>
 
-    private var resultLauncherDestinazione =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+
+    private var minDate: Long = Calendar.getInstance().time.time - 86400000
+    private var maxDate: Long = -1L
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        resultLauncherDestinazione = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if ((result.resultCode == Activity.RESULT_OK) && result != null) {
                 // There are no request codes
                 val data: Intent? = result.data
@@ -45,8 +47,15 @@ class BookingFragment : Fragment() {
             }
         }
 
-    private var minDate: Long = Calendar.getInstance().time.time - 86400000
-    private var maxDate: Long = -1L
+        resultLauncherOrigine = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if ((result.resultCode == Activity.RESULT_OK) && result != null) {
+                // There are no request codes
+                val data: Intent? = result.data
+                binding.edittextorigine.setText(data?.getStringExtra(BookingAirportList.EXTRAKEY_AIRPORT))
+
+            }
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = BookingFormLayoutBinding.inflate(layoutInflater)

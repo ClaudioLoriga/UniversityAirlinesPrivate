@@ -70,26 +70,6 @@ class BookingPassengersDetailsActivity : AppCompatActivity() {
             )
         }
 
-        entryBinding.editTextDocumento.doOnTextChanged { text, _, _, _ ->
-            passengersDetails[passengerNumber] = passengersDetails[passengerNumber].copy(
-                cognome = text.takeIf { it.isNullOrBlank().not() }?.toString()
-                    .orEmpty()
-            )
-        }
-
-        entryBinding.editTextTelefono.doOnTextChanged { text, _, _, _ ->
-            passengersDetails[passengerNumber] = passengersDetails[passengerNumber].copy(
-                cognome = text.takeIf { it.isNullOrBlank().not() }?.toString()
-                    .orEmpty()
-            )
-        }
-
-        entryBinding.editTextIndirizzo.doOnTextChanged { text, _, _, _ ->
-            passengersDetails[passengerNumber] = passengersDetails[passengerNumber].copy(
-                cognome = text.takeIf { it.isNullOrBlank().not() }?.toString()
-                    .orEmpty()
-            )
-        }
         campi.addAll(
             listOf(
                 entryBinding.editTextNome,
